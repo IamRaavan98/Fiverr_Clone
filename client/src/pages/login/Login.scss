@@ -1,0 +1,74 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%; /* Adjusted to 100% width for responsiveness */
+    max-width: 360px; /* Added max-width to maintain readability */
+    padding: 50px 15px; /* Added some vertical padding for mobile devices */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: gray;
+      font-size: 18px;
+    }
+
+    input,
+    textarea {
+      padding: 20px;
+      border: 1px solid rgb(216, 214, 214);
+      width: 100%; /* Ensures inputs fill the container width */
+      box-sizing: border-box; /* Fixes padding affecting width */
+    }
+
+    button {
+      border: none;
+      padding: 20px;
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+      background-color: #1dbf73;
+      cursor: pointer;
+    }
+
+    span {
+      color: red;
+      font-size: 12px;
+    }
+  }
+}
+
+/* Media Query for Tablets and larger screens */
+@media (min-width: 768px) {
+  .login {
+    form {
+      max-width: 500px; /* Adjusted max-width for tablets */
+    }
+  }
+}
+
+/* Media Query for Laptops and larger screens */
+@media (min-width: 1024px) {
+  .login {
+    form {
+      max-width: 720px; /* Adjusted max-width for laptops */
+    }
+  }
+}
+
+/* Media Query for Desktops and larger screens */
+@media (min-width: 1200px) {
+  .login {
+    form {
+      max-width: 960px; /* Adjusted max-width for desktops */
+    }
+  }
+}

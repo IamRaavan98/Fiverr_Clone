@@ -1,0 +1,73 @@
+.add {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 100%; /* Adjust width to take full viewport width */
+    padding: 20px; /* Adjust padding for smaller screens */
+
+    h1 {
+      width: max-content;
+      margin-bottom: 20px; /* Adjust margin for smaller screens */
+      color: gray;
+      font-weight: 300;
+      font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .sections {
+      flex-direction: column; /* Stack sections vertically on smaller screens */
+      gap: 20px;
+
+      label {
+        color: gray;
+        font-size: 18px;
+      }
+
+      .info,
+      .details {
+        width: 100%; /* Take full width on smaller screens */
+        gap: 10px;
+
+        input,
+        select,
+        textarea {
+          width: 100%; /* Take full width */
+          padding: 10px;
+        }
+
+        .images {
+          flex-direction: column; /* Stack elements vertically on smaller screens */
+          gap: 10px;
+
+          .imagesInputs {
+            gap: 10px;
+          }
+
+          button {
+            padding: 10px;
+            font-size: 14px;
+          }
+        }
+
+        .add {
+          flex-direction: column; /* Stack elements vertically on smaller screens */
+
+          input {
+            width: 100%; /* Take full width */
+          }
+        }
+
+        .addedFeatures {
+          flex-direction: column; /* Stack features vertically on smaller screens */
+          gap: 10px;
+
+          button {
+            height: auto; /* Adjust height based on content */
+            font-size: 14px;
+            border: 1px solid red;
+          }
+        }
+      }
+    }
+  }
+}

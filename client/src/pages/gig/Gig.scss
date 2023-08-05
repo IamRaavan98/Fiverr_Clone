@@ -1,0 +1,180 @@
+.gig {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .left {
+      flex: 1;
+      gap: 20px;
+
+      .breadcrumbs {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .user {
+        flex-direction: column;
+        gap: 10px;
+
+        .pp {
+          width: 40px;
+          height: 40px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+
+        .stars {
+          img {
+            height: 12px;
+            width: 12px;
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .slider {
+        img {
+          max-height: 300px;
+        }
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .seller {
+        margin-top: 30px;
+        gap: 10px;
+      }
+    }
+
+    .right {
+      flex: 1;
+      max-height: none;
+      position: static;
+      top: auto;
+
+      .price {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .features {
+        .item {
+          font-size: 12px;
+        }
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .gig .container {
+    padding: 10px;
+    gap: 10px;
+
+    .left {
+      gap: 10px;
+
+      .breadcrumbs {
+        font-size: 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .user {
+        gap: 5px;
+
+        .pp {
+          width: 30px;
+          height: 30px;
+        }
+
+        span {
+          font-size: 10px;
+        }
+
+        .stars {
+          img {
+            height: 10px;
+            width: 10px;
+          }
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .slider {
+        img {
+          max-height: 200px;
+        }
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      .seller {
+        margin-top: 20px;
+        gap: 5px;
+      }
+    }
+
+    .right {
+      .price {
+        gap: 5px;
+      }
+
+      .details {
+        gap: 5px;
+      }
+
+      .features {
+        .item {
+          font-size: 10px;
+        }
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+  }
+}
