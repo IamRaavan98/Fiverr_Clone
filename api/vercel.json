@@ -1,47 +1,14 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "server.js",
       "use": "@vercel/node"
     },
     {
-      "src": "api/public/**/*",
+      "src": "build/**",
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/auth/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/users/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/gigs/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/orders/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/conversations/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/messages/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/reviews/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ]
+
+  "rewrites": [{ "source": "/(.*)", "destination": "server.js" }]
 }
