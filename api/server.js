@@ -43,6 +43,14 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(
+  cors({
+    exposedHeaders: ['X-Total-Count'],
+  })
+);
+
+
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
