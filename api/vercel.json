@@ -12,35 +12,36 @@
   "routes": [
     {
       "src": "/api/auth/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/users/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/gigs/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/orders/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/conversations/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/messages/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/api/reviews/(.*)",
-      "dest": "server.js"
+      "dest": "/api/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "public"
+      "dest": "/public"
     }
   ]
+  
 }
