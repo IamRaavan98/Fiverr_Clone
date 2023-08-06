@@ -3,12 +3,41 @@
     {
       "src": "service.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "build/**",
-      "use": "@vercel/static"
     }
   ],
-
-  "rewrites": [{ "source": "/(.*)", "destination": "service.js" }]
+  "routes": [
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "/api/auth/$1"
+    },
+    {
+      "src": "/api/users/(.*)",
+      "dest": "/api/users/$1"
+    },
+    {
+      "src": "/api/gigs/(.*)",
+      "dest": "/api/gigs/$1"
+    },
+    {
+      "src": "/api/orders/(.*)",
+      "dest": "/api/orders/$1"
+    },
+    {
+      "src": "/api/conversations/(.*)",
+      "dest": "/api/conversations/$1"
+    },
+    {
+      "src": "/api/messages/(.*)",
+      "dest": "/api/messages/$1"
+    },
+    {
+      "src": "/api/reviews/(.*)",
+      "dest": "/api/reviews/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "public": "./public"
 }
