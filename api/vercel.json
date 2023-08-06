@@ -37,8 +37,11 @@
     {
       "src": "/api/reviews/(.*)",
       "dest": "/api/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "public/index.html"
     }
-    
   ]
   
 }
