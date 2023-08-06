@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "api/public/**/*",
       "use": "@vercel/static"
     }
@@ -9,35 +13,35 @@
   "routes": [
     {
       "src": "/auth/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/users/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/gigs/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/orders/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/conversations/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/messages/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/reviews/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/service.js"
+      "dest": "/server.js"
     }
   ]
 }
