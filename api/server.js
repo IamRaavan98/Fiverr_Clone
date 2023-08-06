@@ -27,6 +27,7 @@ const connect = async () => {
     console.log(error);
   }
 };
+connect();
 
 
 app.use(cookieParser());
@@ -63,6 +64,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  connect();
   console.log("Backend server is running!");
 });
