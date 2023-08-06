@@ -33,10 +33,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin:process.env.VITE_REACT_APP_URL,
-  credentials:true
-}));
+app.use(cors({}));
 
 // Convert import.meta.url to a filesystem path
 const __filename = fileURLToPath(import.meta.url);
