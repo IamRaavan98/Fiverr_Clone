@@ -19,33 +19,32 @@ const app = express();
 app.use(express.json());
 
 mongoose.set("strictQuery", true);
-
 const connect = async () => {
   try {
-     await mongoose.connect(process.env.MONGO);
-     console.log("Connected to mongoDB!");
+     mongoose.connect(process.env.MONGO);
+    console.log("Connected to mongoDB!");
   } catch (error) {
     console.log(error);
   }
 };
+
 
 app.use(cookieParser());
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: process.env.VITE_REACT_APP_URL,
-  credentials: true
+  origin:process.env.VITE_REACT_APP_URL,
+  credentials:true
 }));
 
-// Your static files are served from the 'public' directory
+// Convert import.meta.url to a filesystem path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-// Define your API routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
@@ -57,11 +56,11 @@ app.use("/api/reviews", reviewRoute);
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
+
   return res.status(errorStatus).send(errorMessage);
 });
 
-// This route serves the React app's HTML file for all other requests
-
+// Serve the React app for all other requests
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
