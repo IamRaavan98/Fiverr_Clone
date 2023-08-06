@@ -2,42 +2,54 @@
   "version": 2,
   "builds": [
     {
-      "src": "service.js",
+      "src": "api/service.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/public/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/auth/(.*)",
-      "dest": "/api/auth/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/users/(.*)",
-      "dest": "/api/users/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/gigs/(.*)",
-      "dest": "/api/gigs/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/orders/(.*)",
-      "dest": "/api/orders/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/conversations/(.*)",
-      "dest": "/api/conversations/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/messages/(.*)",
-      "dest": "/api/messages/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/api/reviews/(.*)",
-      "dest": "/api/reviews/$1"
+      "dest": "/api/service.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/api/service.js"
+    },
+    {
+      "src": "/",
+      "dest": "/api/public/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "/api/public/$1"
     }
   ]
 }
