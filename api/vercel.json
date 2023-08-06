@@ -11,45 +11,36 @@
   ],
   "routes": [
     {
-      "src": "/auth/(.*)",
+      "src": "/api/auth/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/users/(.*)",
+      "src": "/api/users/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/gigs/(.*)",
+      "src": "/api/gigs/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/orders/(.*)",
+      "src": "/api/orders/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/conversations/(.*)",
+      "src": "/api/conversations/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/messages/(.*)",
+      "src": "/api/messages/(.*)",
       "dest": "service.js"
     },
     {
-      "src": "/reviews/(.*)",
+      "src": "/api/reviews/(.*)",
       "dest": "service.js"
     },
     {
       "src": "/(.*)",
-      "dest": "service.js"
-    },
-    {
-      "src": "/",
-      "dest": "public/index.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "public/$1"
+      "dest": "public"
     }
-  ],
- "rewrites": [{ "source": "/(.*)", "destination": "server.js" }]
+  ]
 }
