@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/service.js",
-      "use": "@vercel/node"
-    },
-    {
       "src": "api/public/**/*",
       "use": "@vercel/static"
     }
@@ -42,14 +38,6 @@
     {
       "src": "/(.*)",
       "dest": "/api/service.js"
-    },
-    {
-      "src": "/",
-      "dest": "/api/public/index.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "/api/public/$1"
     }
   ]
 }
